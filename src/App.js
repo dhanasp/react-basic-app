@@ -1,16 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './Welcome';
 
 function App() {
-  
-  const name = "John smith"
-  const jsxElement = <h1>Hello {formatName(name)}!!!</h1> ;
-
-  return jsxElement;
+  return <div>
+    <Welcome name="Raju"></Welcome>
+  </div>
 }
-
-function formatName(name) {
-  return name.toUpperCase()
-}
-
 export default App;
