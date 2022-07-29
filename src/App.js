@@ -8,7 +8,7 @@ import LoginControl from "./LoginControl";
 
 function App() {
     return <div>
-        <LoginControl/>
+        <LoginControl hasNewMessage credit={100}/>
     </div>
 }
 

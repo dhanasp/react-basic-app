@@ -20,7 +20,7 @@ class LoginControl extends Component {
     render() {
         let button;
         if (this.state.isLoggedIn) {
-            button = <LogoutButton onClick={this.   handleLogoutClick}/>
+            button = <LogoutButton onClick={this.handleLogoutClick}/>
         } else {
             button = <LoginButton onClick={this.handleLoginClick}/>
         }
@@ -28,6 +28,8 @@ class LoginControl extends Component {
             <div>
                 <Greeting isLoggedIn={this.state.isLoggedIn}/>
                 {button}
+                {this.props.hasNewMessage && <h2>You have unread messages!!!</h2>}
+                {this.props.credit > 0 ? <h3>You have {this.props.credit} credit</h3> : <h3>You have no credits</h3>}
             </div>
         );
     }
