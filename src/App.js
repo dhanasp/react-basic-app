@@ -5,10 +5,11 @@ import Clock from './Clock';
 import ToggleButton from './ToggleButton';
 import Greeting from "./Greeting";
 import LoginControl from "./LoginControl";
+import NumberList from "./NumberList";
 
 function App() {
     return <div>
-        <LoginControl hasNewMessage credit={100} hasWarning/>
+        <NumberList></NumberList>
     </div>
 }
 
