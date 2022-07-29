@@ -40,7 +40,7 @@ class UserForm extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({userName: event.target.value})
+        this.setState({[event.target.name]: event.target.value})
     }
 
     handleSubmit = (event) => {
