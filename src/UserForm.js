@@ -9,38 +9,41 @@ class UserForm extends Component {
     render() {
         return <form onSubmit={this.handleSubmit}>
             <div>
-                <div>
-                    <label>Name:
-                        <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange}/>
-                    </label>
-                </div>
-                <div>
-                    <label> Gender:
-                        <select value={this.state.gender} onChange={this.handleGenderChange}>
-                            <option>Choose</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </label>
-                </div>
-                <div>
-                    <label>Description:
-                        <textarea value={this.state.description} onChange={this.handleDescriptionChange}/>
-                    </label>
-                </div>
-                <div>
-                    <label> Accept Terms:
-                        <input type="checkbox" name="acceptTerms" checked={this.state.acceptTerms}
-                               onChange={this.handleAcceptTermsChange}/>
-                    </label>
-                </div>
+                <label>Name:
+                    <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label> Gender:
+                    <select name="gender" value={this.state.gender} onChange={this.handleChange}>
+                        <option>Choose</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>Description:
+                    <textarea name="description" value={this.state.description}
+                              onChange={this.handleChange}/>
+                </label>
+            </div>
+            <div>
+                <label> Accept Terms:
+                    <input type="checkbox" name="acceptTerms" checked={this.state.acceptTerms}
+                           onChange={this.handleChange}/>
+                </label>
+            </div>
+            <div>
                 <button type="submit">Submit</button>
             </div>
         </form>
     }
 
     handleChange = (event) => {
-        this.setState({[event.target.name]: event.target.value})
+        this.setState({
+            [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value
+        })
     }
 
     handleSubmit = (event) => {
@@ -54,10 +57,6 @@ class UserForm extends Component {
 
     handleDescriptionChange = (event) => {
         this.setState({description: event.target.value})
-    }
-
-    handleGenderChange = (event) => {
-        this.setState({gender: event.target.value})
     }
 
     handleAcceptTermsChange = (event) => {
