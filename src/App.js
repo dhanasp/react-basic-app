@@ -8,8 +8,18 @@ import LoginControl from "./LoginControl";
 import NumberList from "./NumberList";
 
 function App() {
+    const numbers = [2, 3, 4, 5, "assdad"]
+    const todos = [{id: 1, name: "walking", isDone: true}, {id: 2, name: "coding", isDone: false}]
+    let todoLI = todos.map(todo => <li>{todo}</li>);
     return <div>
-        <NumberList></NumberList>
+        <NumberList numbers={numbers}/>
+        <ul>
+            {todos.map((todo) => (
+                <li key={todo.id}>
+                    {todo.name} : {todo.isDone ? 'DONE' : ''}
+                </li>
+            ))}
+        </ul>
     </div>
 }
 
