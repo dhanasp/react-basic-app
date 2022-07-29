@@ -30,6 +30,7 @@ class LoginControl extends Component {
                 {button}
                 {this.props.hasNewMessage && <h2>You have unread messages!!!</h2>}
                 {this.props.credit > 0 ? <h3>You have {this.props.credit} credit</h3> : <h3>You have no credits</h3>}
+                {this.props.hasWarning ? <h3>You have a warning</h3> : null}
             </div>
         );
     }
